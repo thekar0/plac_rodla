@@ -3,11 +3,11 @@
 [sub_resource type="GDScript" id="GDScript_xhllg"]
 script/source = "extends CharacterBody3D
 
-const MAX_SPEED_GROUND = 8.0
-const MAX_SPEED_AIR = 20.0
+const MAX_SPEED_GROUND = 50.0
+const MAX_SPEED_AIR = 50.0
 const GROUND_ACCEL = 35
 const AIR_ACCEL = 30
-const FRICTION = 15
+const FRICTION = 1
 const JUMP_VELOCITY = 4.0
 const GRAVITY = 9
 
@@ -28,6 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	basicMovement(delta)
 	move_and_slide()
+	print(Engine.get_frames_per_second())
 
 func basicMovement(delta):
 	var wishdir = Input.get_vector(\"left\", \"right\", \"forward\", \"backward\")

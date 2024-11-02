@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8a8urjicepp1"]
 
-[ext_resource type="PackedScene" uid="uid://08w2pt5ta704" path="res://Scenes/test_place.tscn" id="1_1g5mw"]
 [ext_resource type="PackedScene" uid="uid://djwahpg8q4cbv" path="res://Scenes/player.tscn" id="2_l4j67"]
+[ext_resource type="PackedScene" uid="uid://b28huec3rp48v" path="res://Scenes/map/szczecin.tscn" id="2_ooekf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4kixq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -27,7 +27,8 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
 environment = SubResource("Environment_x1h5o")
 
-[node name="test_place" parent="." instance=ExtResource("1_1g5mw")]
-
 [node name="player" parent="." instance=ExtResource("2_l4j67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 218.687, 97.5125, -41.2759)
+
+[node name="Szczecin" parent="." instance=ExtResource("2_ooekf")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
