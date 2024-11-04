@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8a8urjicepp1"]
+
+[ext_resource type="PackedScene" uid="uid://b28huec3rp48v" path="res://scenes/map/szczecin.tscn" id="2_ooekf"]
+[ext_resource type="PackedScene" uid="uid://cvd0ggadcfy6" path="res://scenes/vehicles/test_car.tscn" id="3_co6ny"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4kixq"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_tdx8m"]
+sky_material = SubResource("ProceduralSkyMaterial_4kixq")
+
+[sub_resource type="Environment" id="Environment_x1h5o"]
+background_mode = 2
+sky = SubResource("Sky_tdx8m")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="main" type="Node3D"]
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="world"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
+environment = SubResource("Environment_x1h5o")
+
+[node name="Szczecin" parent="." instance=ExtResource("2_ooekf")]
+
+[node name="test_car" parent="." instance=ExtResource("3_co6ny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 68.9395, 0)

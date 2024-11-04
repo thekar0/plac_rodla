@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvd0ggadcfy6"]
+
+[ext_resource type="Script" path="res://scripts/test_car.gd" id="1_nj6l2"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nuqge"]
+radial_segments = 12
+
+[sub_resource type="BoxMesh" id="BoxMesh_e5ucu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4kxy"]
+
+[node name="test_car" type="VehicleBody3D"]
+script = ExtResource("1_nj6l2")
+
+[node name="back_left_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="back_left_wheel"]
+transform = Transform3D(-4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nuqge")
+
+[node name="back-right_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00056, 0.00179845, -0.999588)
+use_as_traction = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="back-right_wheel"]
+transform = Transform3D(-4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nuqge")
+
+[node name="front_left_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1)
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front_left_wheel"]
+transform = Transform3D(-4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nuqge")
+
+[node name="front_right_wheel" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 1)
+use_as_steering = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="front_right_wheel"]
+transform = Transform3D(-4.37114e-08, -0.1, 0, 1, -4.37114e-09, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_nuqge")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("BoxMesh_e5ucu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00678098, 0.0377035, -0.0317075)
+shape = SubResource("BoxShape3D_f4kxy")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.25825, -2.61456)

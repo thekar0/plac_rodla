@@ -1,3 +1,5 @@
-res://Scenes/main.tscn
-res://Scenes/player.tscn
-res://Scenes/map/szczecin.tscn
+res://scenes/main.tscn
+res://scenes/player.tscn
+res://scenes/map/szczecin.tscn
+res://scenes/vehicles/test_car.tscn
+res://scripts/test_car.gd
